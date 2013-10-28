@@ -32,7 +32,9 @@ Mp3Info.open(options[:mp3]) do |mp3|
       ctoc << "ch#{num}\x00"
     
       chap = "ch#{num}\x00"
-      chap << [song[:index].to_i, song[:incex] + song[:duration]].pack("NN");
+      starts = song[:index].to_i
+      ends = song[:index].to_i + song[:duration].to_i
+      chap << [starts * 1000, ends * 1000].pack("NN");
       chap << "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
     
       title_tag = [title.encode("utf-16")].pack("a*");
@@ -54,7 +56,7 @@ Mp3Info.open(options[:mp3]) do |mp3|
         chap << [link.length+2].pack("N")
         chap << "\x00\x00\x00#{link}\00"
       end
-    
+
       chaps << chap
     end
     mp3.tag2.CTOC = ctoc

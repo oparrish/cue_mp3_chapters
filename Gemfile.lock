@@ -1,0 +1,12 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ruby-mp3info (0.8)
+    rubycue (0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ruby-mp3info (~> 0.8)
+  rubycue
