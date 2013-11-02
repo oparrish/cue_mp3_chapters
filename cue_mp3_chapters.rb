@@ -61,6 +61,7 @@ Mp3Info.open(options[:mp3]) do |mp3|
     end
     mp3.tag2.CTOC = ctoc
     mp3.tag2.CHAP = chaps
+    mp3.tag2.COMM = ""
   end
 end
 
