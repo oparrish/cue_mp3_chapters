@@ -1,4 +1,4 @@
 source "http://rubygems.org"
  
-gem 'mp3info'
+gem "ruby-mp3info", "~> 0.8"
 gem 'rubycue'
